@@ -126,7 +126,7 @@ sub parse
                     push(@out, "  Site: $h->{attrs}->{vars}->{site}");
                     push(@out,
 "    Map: https://maps.google.com/?q=$h->{attrs}->{vars}->{geolocation}"
-                    ) if ($h->{vars}->{geolocation});
+                    ) if ($h->{attrs}->{vars}->{geolocation});
                 }
 
                 push(@out, "  Services:");
