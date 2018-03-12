@@ -1,7 +1,7 @@
 package Mbot::Plugins::Icinga2;
 use Monitoring::Icinga2::Client::REST;
 
-our $VERSION = '0.1';
+our $VERSION = '0.2';
 
 =head1 NAME
 
@@ -121,7 +121,7 @@ sub parse
                 );
                 push(@out, "$h->{attrs}->{notes}") if ($h->{attrs}->{notes});
 
-                if ($h->{vars}->{site})
+                if ($h->{attrs}->{vars}->{site})
                 {
                     push(@out, "  Site: $h->{attrs}->{vars}->{site}");
                     push(@out,
