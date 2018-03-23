@@ -1,12 +1,11 @@
 use inc::Module::Install;    #libmodule-install-perl
 
-name 'Mbot';
+name 'mbot-plugins-icinga2';
 
 abstract 'Icinga2 plugin for Mbot';
 author 'Marko Punnar <marko@aretaja.org>';
 version '1.0';
 license 'gpl';
-all_from 'lib/Mbot/Plugins/Icinga2.pm';
 
 requires 'Mbot';                        # no package
 requires
