@@ -11,7 +11,7 @@ Mbot::Plugins::Icinga2 - Icinga2 related functionality
 
 =head2 parse - input parser
 
-Reacts to messages beginning with 'icinga'.
+Reacts to Icinga2 related input.
 
     $result = parse($self->in);
 
@@ -26,9 +26,9 @@ sub parse
         my @out = (
             'icinga <command>',
             '  command:',
-            '    status overview - responds with host/service overview',
-            '    hosts down - responds with list of down hosts',
-            '    host <hostname> - responds with detailed host status',
+            '    status overview - responds host/service overview',
+            '    hosts down - responds list of down hosts',
+            '    host <hostname> - responds detailed host status',
         );
         return join("\n", @out);
     }
