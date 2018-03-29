@@ -1,7 +1,10 @@
 package Mbot::Plugins::Icinga2;
+use strict;
+use warnings;
+
 use Monitoring::Icinga2::Client::REST;
 
-our $VERSION = '0.2';
+our $VERSION = '0.3';
 
 =head1 NAME
 
@@ -46,7 +49,7 @@ sub parse
         $params->{path}     = $conf->{ic2_path}    || '/';
         $params->{version}  = $conf->{ic2_version} || 1;
         $params->{insecure} = $conf->{ic2_insec}   || 1;
-        $params->{cacert} = $conf->{ic2_cacert} if (conf->{ic2_cacert});
+        $params->{cacert} = $conf->{ic2_cacert} if ($conf->{ic2_cacert});
 
         my $icinga = new Monitoring::Icinga2::Client::REST($api_host, %$params);
 
