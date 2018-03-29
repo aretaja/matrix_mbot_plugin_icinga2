@@ -12,16 +12,8 @@ Mbot
 ```
 apt install libmonitoring-icinga2-client-rest-perl
 ```
+
 ## Installing
-### Install plugin
-```
-git clone https://github.com/aretaja/matrix_mbot_plugin_icinga2
-cd matrix_mbot_plugin_icinga2
-perl Makefile.PL
-make
-sudo make install
-make clean
-```
 
 ### Add Icinga2 related config to your mbot.conf
 ```
@@ -39,8 +31,24 @@ ic2_insec    = 1                          # optional - plugin skips certificate 
                                           #identification instead of using insecure mode.
 ```
 
-### Restart mbot
+### Download source
 ```
+git clone https://github.com/aretaja/matrix_mbot_plugin_icinga2
+cd matrix_mbot_plugin_icinga2
+```
+
+### Install using script
+```
+./install.sh
+```
+
+### .. or do it step by step manually
+```
+perl Makefile.PL
+make
+make test
+sudo make install
+make clean
 sudo systemctl restart mbot
 ```
 
